@@ -4,11 +4,14 @@
 
 ## 运行环境
 QT Creator 5.0.2
+
 QT 5.12.12 MinGW 64-bit
 
 ## 文档说明
 docs 文档文件夹
+
 test 测试文件夹
+
 Tokenizer 源码文件夹
 
 ## 本项目缺陷
