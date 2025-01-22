@@ -1,0 +1,65 @@
+// 测试用例1
+fn main() {
+   let penguin_data = "\
+   common name,length (cm)
+   Little penguin,33
+   Yellow-eyed penguin,65
+   Fiordland penguin,60
+   Invalid,data";
+
+   let records = penguin_data.lines();
+
+   for (i, record) in records.enumerate() {
+     if i == 0 || record.trim().len() == 0 {
+       continue;
+     }
+
+       let fields: Vec<_> = record
+       .split(',')
+       .map(|field| field.trim())
+       .collect();
+     if cfg!(debug_assertions) {
+         // 输出到标准错误输出
+       eprintln!("debug: {:?} -> {:?}",
+              record, fields);
+     }
+
+     let name = fields[0];
+     if let Ok(length) = fields[1].parse::<f32>() {
+         // 输出到标准输出
+         println!("{}, {}cm", name, length);
+     }
+   }
+ }
+
+/*测试用例2：*/fn main() {
+    let max_iterations = 1_000_000; // 设置迭代次数
+    let mut denominator = 1; // 分母初始化为1
+    let mut pi_approx = 0.0; // 初始化pi的近似值
+    let mut sign = 1.0; // 初始化符号为正
+ 
+    for _ in 0..max_iterations {
+        pi_approx += sign * 4.0 / denominator;
+        denominator += 2; // 分母递增2
+        sign = -sign; // 符号变号
+}
+ 
+    let pi = pi_approx * 2.0; // 最终的pi值是近似值乘以2
+    println!("计算得到的pi值是: {}", pi);
+
+    let hex_number = 0x1A3F_CDEF;
+    let number1 =98_222;
+}
+
+// 测试用例3：
+=> ->
+b"test"
+r#"test"#
+b'H'
+@ # $::
+/*test
+多行注释
+t e s t
+多 行 注 释
+let number1 =98_222;
+test*/

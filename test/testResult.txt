@@ -1,0 +1,472 @@
+The result is : 
+
+// 测试用例1
+// 测试用例1：注释
+
+
+fn main() {
+fn：关键词
+main：标识符
+(：分隔符
+)：分隔符
+{：分隔符
+
+
+   let penguin_data = "\
+let：关键词
+penguin_data：标识符
+=：操作符
+"\：字符串字面量
+
+
+   common name,length (cm)
+common name,length (cm)：字符串字面量
+
+
+   Little penguin,33
+Little penguin,33：字符串字面量
+
+
+   Yellow-eyed penguin,65
+Yellow-eyed penguin,65：字符串字面量
+
+
+   Fiordland penguin,60
+Fiordland penguin,60：字符串字面量
+
+
+   Invalid,data";
+Invalid,data"：字符串字面量
+;：分隔符
+
+
+
+
+
+   let records = penguin_data.lines();
+let：关键词
+records：标识符
+=：操作符
+penguin_data：标识符
+.：操作符
+lines：标识符
+(：分隔符
+)：分隔符
+;：分隔符
+
+
+
+
+
+   for (i, record) in records.enumerate() {
+for：关键词
+(：分隔符
+i：标识符
+,：分隔符
+record：标识符
+)：分隔符
+in：关键词
+records：标识符
+.：操作符
+enumerate：标识符
+(：分隔符
+)：分隔符
+{：分隔符
+
+
+     if i == 0 || record.trim().len() == 0 {
+if：关键词
+i：标识符
+==：操作符
+0：字面量 （十进制整数）
+||：操作符
+record：标识符
+.：操作符
+trim：标识符
+(：分隔符
+)：分隔符
+.：操作符
+len：标识符
+(：分隔符
+)：分隔符
+==：操作符
+0：字面量 （十进制整数）
+{：分隔符
+
+
+       continue;
+continue：关键词
+;：分隔符
+
+
+     }
+}：分隔符
+
+
+
+
+
+       let fields: Vec<_> = record
+let：关键词
+fields：标识符
+:：分隔符
+Vec：标识符
+<：操作符
+_：标识符
+>：操作符
+=：操作符
+record：标识符
+
+
+       .split(',')
+.：操作符
+split：标识符
+(：分隔符
+','：字符字面量
+)：分隔符
+
+
+       .map(|field| field.trim())
+.：操作符
+map：标识符
+(：分隔符
+|：操作符
+field：标识符
+|：操作符
+field：标识符
+.：操作符
+trim：标识符
+(：分隔符
+)：分隔符
+)：分隔符
+
+
+       .collect();
+.：操作符
+collect：标识符
+(：分隔符
+)：分隔符
+;：分隔符
+
+
+     if cfg!(debug_assertions) {
+if：关键词
+cfg!：标识符
+(：分隔符
+debug_assertions：标识符
+)：分隔符
+{：分隔符
+
+
+         // 输出到标准错误输出
+// 输出到标准错误输出：注释
+
+
+       eprintln!("debug: {:?} -> {:?}",
+eprintln!：标识符
+(：分隔符
+"debug: {:?} -> {:?}"：字符串字面量
+,：分隔符
+
+
+              record, fields);
+record：标识符
+,：分隔符
+fields：标识符
+)：分隔符
+;：分隔符
+
+
+     }
+}：分隔符
+
+
+
+
+
+     let name = fields[0];
+let：关键词
+name：标识符
+=：操作符
+fields：标识符
+[：分隔符
+0：字面量 （十进制整数）
+]：分隔符
+;：分隔符
+
+
+     if let Ok(length) = fields[1].parse::<f32>() {
+if：关键词
+let：关键词
+Ok：标识符
+(：分隔符
+length：标识符
+)：分隔符
+=：操作符
+fields：标识符
+[：分隔符
+1：字面量 （十进制整数）
+]：分隔符
+.：操作符
+parse：标识符
+:：分隔符
+:：分隔符
+<：操作符
+f32：类型名
+>：操作符
+(：分隔符
+)：分隔符
+{：分隔符
+
+
+         // 输出到标准输出
+// 输出到标准输出：注释
+
+
+         println!("{}, {}cm", name, length);
+println!：宏调用名
+(：分隔符
+"{}, {}cm"：字符串字面量
+,：分隔符
+name：标识符
+,：分隔符
+length：标识符
+)：分隔符
+;：分隔符
+
+
+     }
+}：分隔符
+
+
+   }
+}：分隔符
+
+
+ }
+}：分隔符
+
+
+
+
+
+/*测试用例2：*/fn main() {
+/*测试用例2：*/：注释
+fn：关键词
+main：标识符
+(：分隔符
+)：分隔符
+{：分隔符
+
+
+    let max_iterations = 1_000_000; // 设置迭代次数
+let：关键词
+max_iterations：标识符
+=：操作符
+1_000_000：字面量 （十进制整数）
+;：分隔符
+// 设置迭代次数：注释
+
+
+    let mut denominator = 1; // 分母初始化为1
+let：关键词
+mut：关键词
+denominator：标识符
+=：操作符
+1：字面量 （十进制整数）
+;：分隔符
+// 分母初始化为1：注释
+
+
+    let mut pi_approx = 0.0; // 初始化pi的近似值
+let：关键词
+mut：关键词
+pi_approx：标识符
+=：操作符
+0.0：字面量 （十进制浮点数）
+;：分隔符
+// 初始化pi的近似值：注释
+
+
+    let mut sign = 1.0; // 初始化符号为正
+let：关键词
+mut：关键词
+sign：标识符
+=：操作符
+1.0：字面量 （十进制浮点数）
+;：分隔符
+// 初始化符号为正：注释
+
+
+ 
+
+
+    for _ in 0..max_iterations {
+for：关键词
+_：标识符
+in：关键词
+0：字面量 （十进制整数）
+..：操作符
+max_iterations：标识符
+{：分隔符
+
+
+        pi_approx += sign * 4.0 / denominator;
+pi_approx：标识符
++=：操作符
+sign：标识符
+*：操作符
+4.0：字面量 （十进制浮点数）
+/：操作符
+denominator：标识符
+;：分隔符
+
+
+        denominator += 2; // 分母递增2
+denominator：标识符
++=：操作符
+2：字面量 （十进制整数）
+;：分隔符
+// 分母递增2：注释
+
+
+        sign = -sign; // 符号变号
+sign：标识符
+=：操作符
+-：操作符
+sign：标识符
+;：分隔符
+// 符号变号：注释
+
+
+}
+}：分隔符
+
+
+ 
+
+
+    let pi = pi_approx * 2.0; // 最终的pi值是近似值乘以2
+let：关键词
+pi：标识符
+=：操作符
+pi_approx：标识符
+*：操作符
+2.0：字面量 （十进制浮点数）
+;：分隔符
+// 最终的pi值是近似值乘以2：注释
+
+
+    println!("计算得到的pi值是: {}", pi);
+println!：宏调用名
+(：分隔符
+"计算得到的pi值是: {}"：字符串字面量
+,：分隔符
+pi：标识符
+)：分隔符
+;：分隔符
+
+
+
+
+
+    let hex_number = 0x1A3F_CDEF;
+let：关键词
+hex_number：标识符
+=：操作符
+0x1A3F_CDEF：字面量 （十六进制整数）
+;：分隔符
+
+
+    let number1 =98_222;
+let：关键词
+number1：标识符
+=：操作符
+98_222：字面量 （十进制整数）
+;：分隔符
+
+
+}
+}：分隔符
+
+
+
+
+
+// 测试用例3：
+// 测试用例3：：注释
+
+
+String char u8
+String：类型名
+char：类型名
+u8：类型名
+
+
+'a 'a'
+'a：生命周期
+'a'：字符字面量
+
+
+=> -> <= >=
+=>：操作符
+->：操作符
+<=：操作符
+>=：操作符
+
+
+b"test"
+b"test"：字节字符串字面量
+
+
+r#"test"#
+r#"test"#：原始字符串字面量
+
+
+b'H'
+b'H'：字节字面量
+
+
+@ # $::
+@：宏操作符号 
+#：宏操作符号 
+$：宏操作符号 
+:：分隔符
+:：分隔符
+
+
+** &= /= += -= && & ^= *=
+**：操作符
+&=：操作符
+&=：操作符
++=：操作符
+-=：操作符
+&&：操作符
+&：操作符
+^=：操作符
+*=：操作符
+
+
+/*test
+/*test：注释
+
+
+多行注释
+多行注释：注释
+
+
+t e s t
+t e s t：注释
+
+
+多 行 注 释
+多 行 注 释：注释
+
+
+let number1 =98_222;
+let number1 =98_222;：注释
+
+
+test*/
+test*/：注释
+
